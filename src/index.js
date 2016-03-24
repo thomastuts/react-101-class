@@ -30,6 +30,9 @@ var ReactDOM = require('react-dom');
  */
 
 var GreetingCard = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired
+  },
   render: function () {
     return (
       <p>Hello, my name is {this.props.name}!</p>
