@@ -8,7 +8,7 @@ var ReactDOM = require('react-dom');
  * Iteration 1
  * ----
  * Fill in the `render()` method to return an HTML `p` tag using JSX that says 'Hello,
- * my name is <the name passed in>'. Using `this.props`, pass in the `name` prop to the component
+ * my name is <the name passed in>'. Using `this.props`, pass in the `name` prop to the render method
  * so you can dynamically render GreetingCard components with different names. Tip: make sure to add
  * your prop to the component when rendering it using `ReactDOM.render()`!
  *
