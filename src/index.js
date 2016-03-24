@@ -21,6 +21,12 @@ var ReactDOM = require('react-dom');
  * ----
  * Add support for multiple languages. The language that will be used will be defined using the
  * `language` prop. Make it default to English if the language prop is omitted with getDefaultProps().
+ *
+ * Iteration 4
+ * ----
+ * Convert all of your code to ES2015, and create the component using ES2015's class, extending
+ * React.Component. Finally, move the GreetingCard component to a separate file in a new folder
+ * (components/greeting-card.js), and import it here using ES2015's module system.
  */
 
 var GreetingCard = React.createClass({
