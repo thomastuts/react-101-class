@@ -1,5 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GreetingCard from './components/GreetingCard.js';
 
 /**
  * This is the Greeting Card exercise that will be refactored in several iterations.
@@ -29,29 +30,7 @@ var ReactDOM = require('react-dom');
  * (components/greeting-card.js), and import it here using ES2015's module system.
  */
 
-var GreetingCard = React.createClass({
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    language: React.PropTypes.string
-  },
-  getDefaultProps: function () {
-    return {
-      language: 'EN'
-    };
-  },
-  render: function () {
-    var greetingsPerLanguage = {
-      EN: 'Hello, my name is ' + this.props.name + '!',
-      NL: 'Hallo, mijn naam is ' + this.props.name + '!'
-    };
-
-    return (
-      <p>{greetingsPerLanguage[this.props.language]}</p>
-    );
-  }
-});
-
 ReactDOM.render(
-  <GreetingCard name={'Jack Sparrow'} language={'NL'} />,
+  <GreetingCard name={'Jack Sparrow'} />,
   document.getElementById('root')
 );
