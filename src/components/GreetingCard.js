@@ -6,13 +6,14 @@ export default class GreetingCard extends React.Component {
   }
 
   render() {
+    const {name, language} = this.props;
     const greetingsPerLanguage = {
-      EN: 'Hello, my name is ' + this.props.name + '!',
-      NL: 'Hallo, mijn naam is ' + this.props.name + '!'
+      EN: `Hello, my name is ${name}!`,
+      NL: `Hallo, mijn naam is ${name}!`
     };
 
     return (
-      <p>{greetingsPerLanguage[this.props.language]}</p>
+      <p>{greetingsPerLanguage[language]}</p>
     );
   }
 }
