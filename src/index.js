@@ -31,11 +31,13 @@ var ReactDOM = require('react-dom');
 
 var GreetingCard = React.createClass({
   render: function () {
-    // Add your render logic here
+    return (
+      <p>Hello, my name is {this.props.name}!</p>
+    );
   }
 });
 
 ReactDOM.render(
-  <GreetingCard />,
+  <GreetingCard name={'Jack Sparrow'} />,
   document.getElementById('root')
 );
