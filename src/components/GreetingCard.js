@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class GreetingCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {name, language} = this.props;
     const greetingsPerLanguage = {
