@@ -31,16 +31,27 @@ var ReactDOM = require('react-dom');
 
 var GreetingCard = React.createClass({
   propTypes: {
-    name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired,
+    language: React.PropTypes.string
+  },
+  getDefaultProps: function () {
+    return {
+      language: 'EN'
+    };
   },
   render: function () {
+    var greetingsPerLanguage = {
+      EN: 'Hello, my name is ' + this.props.name + '!',
+      NL: 'Hallo, mijn naam is ' + this.props.name + '!'
+    };
+
     return (
-      <p>Hello, my name is {this.props.name}!</p>
+      <p>{greetingsPerLanguage[this.props.language]}</p>
     );
   }
 });
 
 ReactDOM.render(
-  <GreetingCard name={'Jack Sparrow'} />,
+  <GreetingCard name={'Jack Sparrow'} language={'NL'} />,
   document.getElementById('root')
 );
