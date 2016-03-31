@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * This is the Timr exercise.
+ * This is the Timer exercise.
  *
  * Briefing
  * ----
@@ -24,11 +24,15 @@ export default class Timer extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.setState({
         secondsSinceMount: this.state.secondsSinceMount + 1
       });
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
