@@ -7,26 +7,7 @@ import React from 'react';
  */
 
 export default class Catalogue extends React.Component {
-  handleAddItem(item) {
-    this.props.onAddItem(item);
-  }
-
-  handleRemoveItem(item) {
-    this.props.onRemoveItem(item);
-  }
-
   render() {
-    const availableItems = this.props.items.map(item => (
-      <tr key={item.name}>
-        <td>{item.name}</td>
-        <td>${item.price}</td>
-        <td>
-          <button onClick={this.handleRemoveItem.bind(this, item)}>-</button>
-          <button onClick={this.handleAddItem.bind(this, item)}>+</button>
-        </td>
-      </tr>
-    ));
-
     return (
       <div>
         <h2>Available items</h2>
@@ -39,7 +20,7 @@ export default class Catalogue extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {availableItems}
+            
           </tbody>
         </table>
       </div>

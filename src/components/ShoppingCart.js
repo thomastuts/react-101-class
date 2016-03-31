@@ -8,19 +8,6 @@ import React from 'react';
 
 export default class ShoppingCart extends React.Component {
   render() {
-    const itemsInCart = this.props.itemsInCart.map(item => (
-      <tr key={item.name}>
-        <td>{item.name}</td>
-        <td>{item.amount}</td>
-        <td>${item.price}</td>
-        <td>${(item.amount * item.price).toFixed(2)}</td>
-      </tr>
-    ));
-
-    const totalAmount = this.props.itemsInCart.reduce((total, item) => {
-      return total + (item.amount * item.price);
-    }, 0).toFixed(2);
-
     return (
       <div>
         <h2>Items in your cart</h2>
@@ -34,12 +21,11 @@ export default class ShoppingCart extends React.Component {
           </tr>
           </thead>
           <tbody>
-          {itemsInCart}
           </tbody>
           <tfoot>
             <tr>
               <td colSpan="4" style={{textAlign: 'right'}}>
-                <strong>Total: ${totalAmount}</strong>
+                <strong>Total: $0</strong>
               </td>
             </tr>
           </tfoot>

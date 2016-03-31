@@ -34,63 +34,12 @@ import ShoppingCart from './ShoppingCart';
  */
 
 export default class Supermarket extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      itemsInCart: []
-    };
-  }
-
-  getExistingItemInCart(item) {
-    return this.state.itemsInCart.find(itemInCart => itemInCart.name === item.name);
-  }
-
-  handleAddItem(itemToAdd) {
-    const existingItemInCart = this.getExistingItemInCart(itemToAdd);
-    let updatedCart = this.state.itemsInCart;
-
-    if (!existingItemInCart) {
-      updatedCart.push(Object.assign({}, itemToAdd, {
-        amount: 1
-      }));
-    } else {
-      existingItemInCart.amount++;
-    }
-
-    this.setState({
-      itemsInCart: updatedCart
-    });
-  }
-
-  handleRemoveItem(itemToRemove) {
-    const existingItemInCart = this.getExistingItemInCart(itemToRemove);
-    let updatedCart = this.state.itemsInCart;
-
-    // Only update the cart if the item is actually in it
-    if (existingItemInCart) {
-      /**
-       * If the amount is 1, we can remove it from the cart. If the amount is more than 1, we
-       * subtract 1 from it.
-       */
-      if (existingItemInCart.amount === 1) {
-        updatedCart = updatedCart.filter(itemInCart => itemInCart.name !== itemToRemove.name);
-      } else {
-        existingItemInCart.amount--;
-      }
-
-      this.setState({
-        itemsInCart: updatedCart
-      });
-    }
-  }
-
   render() {
     return (
       <div>
         <h1>React Supermarket</h1>
-        <Catalogue items={this.props.catalogue} onAddItem={this.handleAddItem.bind(this)} onRemoveItem={this.handleRemoveItem.bind(this)} />
-        <ShoppingCart itemsInCart={this.state.itemsInCart} />
+        <Catalogue />
+        <ShoppingCart />
       </div>
     );
   }
