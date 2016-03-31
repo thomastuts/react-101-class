@@ -21,11 +21,31 @@ import React from 'react';
  */
 
 export default class ColorButtonClicker extends React.Component {
+  handleButtonClick(color) {
+    console.log('You have clicked the ' + color + ' button!');
+  }
+
   render() {
+    /**
+     * Transform the array of colors into an array of <button> elements that have a background style,
+     * a key and an event handler. We store this in a separate variable to keep our render method
+     * nice and clean.
+     */
+    const buttons = this.props.colors.map(color => (
+      <button key={color} style={{backgroundColor: color}} onClick={this.handleButtonClick.bind(this, color)}>{color}</button>
+    ));
+
     return (
       <div>
-        Add your buttons here.
+        {buttons}
       </div>
     );
   }
 }
+
+/**
+ * We want an array of strings to be passed in for our colors.
+ */
+ColorButtonClicker.propTypes = {
+  colors: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+};
