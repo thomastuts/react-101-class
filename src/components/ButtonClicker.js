@@ -21,10 +21,14 @@ import React from 'react';
  */
 
 export default class ButtonClicker extends React.Component {
+  sayHello() {
+    console.log('Hello, world! I have been clicked.');
+  }
+
   render() {
     return (
       <div>
-        <button>Click me!</button>
+        <button onClick={this.sayHello}>Click me!</button>
       </div>
     );
   }
