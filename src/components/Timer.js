@@ -15,9 +15,25 @@ import React from 'react';
  */
 
 export default class Timer extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      secondsSinceMount: 0
+    };
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        secondsSinceMount: this.state.secondsSinceMount + 1
+      });
+    }, 1000);
+  }
+
   render() {
     return (
-      <p>I have been running for 0 seconds.</p>
+      <p>I have been running for {this.state.secondsSinceMount} seconds.</p>
     );
   }
 }
