@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {getBookData} from '../api/books.js';
+import Rating from './Rating';
 
 export default class BookDetail extends React.Component {
   constructor() {
@@ -20,6 +21,14 @@ export default class BookDetail extends React.Component {
     });
   }
 
+  handleRating(rating) {
+    this.setState({
+      bookInfo: Object.assign(this.state.bookInfo, {
+        rating: rating
+      })
+    });
+  }
+
   render() {
     if (!this.state.bookInfo) {
       return (
@@ -29,6 +38,7 @@ export default class BookDetail extends React.Component {
       return (
         <div>
           <h1>{this.state.bookInfo.title}</h1>
+          <Rating rating={this.state.bookInfo.rating} onRatingClick={this.handleRating.bind(this)} />
           <img src={this.state.bookInfo.image} />
           <p>{this.state.bookInfo.description}</p>
         </div>

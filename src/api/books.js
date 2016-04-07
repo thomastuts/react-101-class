@@ -4,6 +4,7 @@ export function getBookData(bookId, cb) {
     if (bookId === 'harry-potter') {
       cb({
           title: 'Harry Potter and The Goblet of Fire',
+          rating: 3,
           image: 'http://placekitten.com/200/201',
           description: 'Harry Potter goes on a crazy adventure, wow!'
         }
@@ -11,10 +12,11 @@ export function getBookData(bookId, cb) {
     } else {
       cb({
           title: 'Fifty Shades of Grey',
+          rating: 3,
           image: 'http://placekitten.com/200/201',
           description: 'Some kind of weird book a lot of people seem to be into.'
         }
       )
     }
-  }, 3000);
+  }, 100);
 }
