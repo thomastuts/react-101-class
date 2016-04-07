@@ -1,10 +1,5 @@
 import React from 'react';
 
-const ARC_DE_TRIOMPHE_POSITION = {
-  lat: 48.873947,
-  lng: 2.295038
-};
-
 /**
  * This is the Map exercise.
  *
@@ -28,31 +23,14 @@ const ARC_DE_TRIOMPHE_POSITION = {
  */
 
 export default class Map extends React.Component {
-  constructor() {
-    super();
-
-    this.goToArc = this.goToArc.bind(this);
-  }
-
-  componentDidMount() {
-    const {lat, lng} = this.props.initialPosition;
-
-    this.map = new google.maps.Map(this.refs.map, {
-      center: {lat, lng},
-      zoom: 16
-    });
-  }
-
-  goToArc() {
-    this.map.panTo(ARC_DE_TRIOMPHE_POSITION);
-  }
-
   render() {
     return (
       <div>
         <h1>Map</h1>
-        <button onClick={this.goToArc}>Go to Arc De Triomphe</button>
-        <div style={{width: 500, height: 500, border: '1px solid black'}} ref="map"></div>
+        <button>Go to Arc De Triomphe</button>
+        <div style={{width: 500, height: 500, border: '1px solid black'}}>
+          I should be a map!
+        </div>
       </div>
     );
   }
