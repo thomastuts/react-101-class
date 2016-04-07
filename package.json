@@ -4,7 +4,8 @@
   "description": "Super basic, opinionated React starter kit.",
   "dependencies": {
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "react-router": "^2.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
