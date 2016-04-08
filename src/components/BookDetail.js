@@ -10,6 +10,8 @@ export default class BookDetail extends React.Component {
     this.state = {
       bookInfo: null
     };
+
+    this.handleRating = this.handleRating.bind(this);
   }
 
   componentDidMount() {
@@ -38,7 +40,7 @@ export default class BookDetail extends React.Component {
       return (
         <div>
           <h1>{this.state.bookInfo.title}</h1>
-          <Rating rating={this.state.bookInfo.rating} onRatingClick={this.handleRating.bind(this)} />
+          <Rating rating={this.state.bookInfo.rating} onRatingClick={this.handleRating} />
           <img src={this.state.bookInfo.image} />
           <p>{this.state.bookInfo.description}</p>
         </div>
