@@ -1,0 +1,5 @@
+--compilers js:babel-register
+--require should
+--require babel-polyfill
+--recursive
+--timeout 5000

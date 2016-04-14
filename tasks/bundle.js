@@ -18,6 +18,10 @@ const b = watchify(browserify(opts));
 
 b.transform(babelify);
 
+b.external('react-dom');
+b.external('react-dom/server');
+b.external('react-addons-test-utils');
+
 gulp.task('js', bundle);
 b.on('update', bundle);
 b.on('log', gutil.log);
